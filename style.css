@@ -10,3 +10,48 @@ p {
   padding: 16px;
   margin: 32px;
 }
+
+.org {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+}
+
+.images img {
+  display: block;
+  max-width: 500px;
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom:20px;
+
+.images-container {
+    padding-top: 64px;
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+  }
+
+
+
+.nav {
+  font-family: 'Roboto Mono', monospace;
+  position: fixed;
+  top: 0;
+  left 0;
+  width: 100;
+  display:flex;
+  justify-content:space-around;
+
+}
+
+.nav a{
+  margin-right: 15px;
+  color: lavender;
+}
+
+.paint {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 50%;
+}
