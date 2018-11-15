@@ -1,7 +1,34 @@
 @import url('https://fonts.googleapis.com/css?family=Roboto+Mono');
+
 body {
   font-family: 'Roboto Mono', monospace;
+  color: white
+  margin: 0
+}
 
+.nav {
+  font-family: 'Roboto Mono', monospace;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  display: flex;
+  justify-content: space-around;
+  padding-top: 8px;
+  padding-bottom: 16px;
+  border-bottom: 2px solid #fdfdfd;
+
+}
+
+
+.nav a{
+  margin-right: 15px;
+  color: white;
+}
+
+
+div {
+  margin: 0
 }
 
 p {
@@ -11,47 +38,69 @@ p {
   margin: 32px;
 }
 
-.org {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-around;
-}
 
-.images img {
+.images {
   display: block;
   max-width: 500px;
   margin-left: auto;
   margin-right: auto;
   margin-bottom:20px;
-
-.images-container {
-    padding-top: 64px;
-    display: flex;
-    justify-content: space-around;
-    flex-wrap: wrap;
-  }
-
-
-
-.nav {
-  font-family: 'Roboto Mono', monospace;
-  position: fixed;
-  top: 0;
-  left 0;
-  width: 100;
-  display:flex;
-  justify-content:space-around;
-
 }
 
-.nav a{
-  margin-right: 15px;
-  color: lavender;
+
+
+.images img {
+  width: 500px;
+  margin: 32px 0;
 }
+
+.page {
+  padding-top: 22px;
+}
+#home {
+  background-image: url("assets/IMG_4378.JPG");
+  background-size: cover;
+  background-position: center;
+  display: block;
+  justify-content: space-around;
+  align-items: center;
+  margin: 0
+}
+
+
+
+#home h1 {
+  font-size: 8em;
+  margin: 16px;
+}
+
+#home h3 {
+  text-align: center;
+  margin: 0;
+}
+
+#home .slideshow-image {
+  width: 200px;
+  height: 200px;
+  background-image: url('assets/IMG_3.JPG');
+  background-size: cover;
+  background-position: center;
+  margin: 0 auto;
+}
+
+
 
 .paint {
-    display: block;
-    margin-left: auto;
-    margin-right: auto;
-    width: 50%;
+  display: block;
+  max-width: 500px;
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom:20px;
+}
+
+
+
+.paint img {
+  width: 500px;
+  margin: 32px 0;
 }
