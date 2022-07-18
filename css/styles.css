@@ -1,0 +1,433 @@
+@font-face {
+  font-family: 'Diatype';
+  src: url('../fonts/abcdiatype-regular.woff2') format('woff2');
+}
+
+@font-face {
+  font-family: 'Louise';
+  src: url('../fonts/Louise-Regular.woff2') format('woff2');
+}
+
+@font-face {
+  font-family: 'Compagnon';
+  src: url('../fonts/Compagnon-Italic.woff2') format('woff2');
+}
+
+body {
+  font-family: 'Diatype', sans-serif;
+  font-size: 16px;
+}
+
+.orb {
+  position: fixed;
+  z-index: -999;
+  top: 0;
+}
+
+.outsideframe {
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0);
+  z-index: 997;
+  cursor: crosshair;
+}
+
+.gradient {
+  position: fixed;
+  z-index: 0;
+  bottom: 0;
+  width: 100%;
+  height: 40%;
+  background: rgb(255,173,203);
+  background: linear-gradient(0deg, rgba(255,173,203,1) 0%, rgba(255,242,242,0) 100%);
+}
+
+.name {
+  font-family: 'Diatype', sans-serif;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  width: calc(100% - 2em);
+  position: fixed;
+  z-index: 997;
+  bottom: 1em;
+  pointer-events: none;
+  transition: 0.2s all;
+}
+
+.blur {
+  filter: blur(8px);
+  -webkit-filter: blur(8px);
+}
+
+@media only screen and (max-width: 70em) {
+  .name {
+    bottom: 3em;
+  }
+}
+
+@media only screen and (max-width: 35em) {
+  .name {
+    width: calc(100% - 1em);
+    bottom: 7em;
+  }
+}
+
+.name h1 {
+  font-size: 16vw;
+  letter-spacing: -1vw;
+  font-weight: regular;
+  margin-left: 12px;
+}
+
+.menu, .bottom {
+  z-index: 999;
+  display: flex;
+}
+
+.menu {
+  top: 3em;
+  left: 55%;
+  position: fixed;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+
+button.about, button.contact {
+  z-index: 999;
+  position: fixed;
+  bottom: 1.5em;
+}
+
+button.about {
+  left: 55%;
+}
+
+button.contact {
+  left: calc(65% + 3em);
+}
+
+@media only screen and (max-width: 62em) {
+  button.about, button.contact {
+    bottom: 2em;
+  }
+}
+
+/* reposition bottom buttons for mobile */
+@media only screen and (max-width: 35em) {
+  button.about {
+    bottom: calc(4em + 2px);
+    left: 55%;
+  }
+
+  button.contact {
+    bottom: 2em;
+    left: 55%;
+  }
+}
+
+/* +button reset? */
+.bottom button {
+  margin-right: 3em;
+  height: 2.2em;
+  color: black;
+  text-decoration: none;
+  border-radius: 20px;
+  margin-bottom: -1px;
+  transition: 0.1s padding;
+  font-size: 16px;
+  padding: 0.3em 1.2em 0.3em 3em;
+  background-color: rgba(223, 255, 0, 0.8);
+  border: 1px solid black;
+}
+
+.bottom button:hover {
+  color: blue;
+  padding: 0.3em 3em 0.3em 3em;
+  font-family: 'Louise', serif;
+  cursor: pointer;
+}
+
+.bottom button.clicked {
+  font-family: 'Louise', serif;
+  border: 1px solid black;
+}
+
+.bottom button.clicked::before {
+  position: absolute;
+  content: "*";
+  left: 1em;
+  line-height: 1.4;
+}
+
+a.navbutton {
+  padding: 0.3em 1.2em 0.3em 3em;
+  background-color: rgba(223, 255, 0, 0.8);
+  border: 1px solid black;
+  border-radius: 20px;
+  text-decoration: none;
+  margin-bottom: -1px;
+  color: black;
+  height: 2.2em;
+  transition: 0.1s all;
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+}
+
+a.navbutton:hover {
+  color: blue;
+  font-family: 'Louise', serif;
+  padding: 0.3em 3em 0.3em 3em;
+}
+
+.selected {
+  font-family: 'Louise', serif;
+}
+
+.selected::before {
+  position: absolute;
+  content: "*";
+  left: 1em;
+  line-height: 1.4;
+}
+
+
+
+/* popup info windows */
+
+.aboutwindow, .contactwindow {
+  display: none;
+  position: fixed;
+  bottom: 3.6em;
+  z-index: 999;
+  max-height: 75vh;
+  max-width: 35vw;
+  padding: 2em 3em;
+  background-color: rgba(223, 255, 0, 0.8);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border: 1px solid black;
+  border-radius: 20px;
+  overflow: scroll;
+}
+
+.aboutwindow {
+  left: 55%;
+}
+
+.contactwindow {
+  left: calc(65% + 3em);
+}
+
+@media only screen and (max-width: 55em) {
+  .aboutwindow, .contactwindow {
+    max-height: 70vh;
+    max-width: 50vw;
+  }
+
+  .aboutwindow {
+    left: calc(50% - 1.5em);
+  }
+
+  .contactwindow {
+    left: calc(65% - 1.5em);
+  }
+}
+
+@media only screen and (max-width: 62em) {
+  .aboutwindow, .contactwindow {
+    bottom: 4.1em;
+  }
+}
+
+@media only screen and (max-width: 35em) {
+  .aboutwindow, .contactwindow {
+    max-height: 60vh;
+    max-width: calc(100vw - 2em);
+  }
+
+  .aboutwindow {
+    left: 1em;
+    bottom: calc(6em + 3px);
+  }
+
+  .contactwindow {
+    left: auto;
+    right: 1em;
+    bottom: calc(4em + 1px);
+  }
+}
+
+a.contacttext {
+  text-decoration: none;
+  color: blue;
+}
+
+a.contacttext::after {
+  margin-left: 0.2em;
+  content: "→";
+}
+
+.aboutimage {
+  max-width: 100%;
+  border: 1px solid black;
+  margin-bottom: 1em;
+}
+
+
+
+/* work pages*/
+
+.workwrapper {
+  position: fixed;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  height: 100%;
+  overflow-y: scroll;
+  z-index: 997;
+}
+
+.projectwrapper:first-child {
+  margin-top: 8em;
+}
+
+.projectwrapper {
+  margin-top: 10em;
+}
+
+.projectwrapper:last-child {
+  margin-bottom: 12em;
+}
+
+@media only screen and (max-width: 35em) {
+  .projectwrapper {
+    margin-top: 6em;
+  }
+
+  .projectwrapper:first-child {
+    margin-top: 12em;
+  }
+}
+
+.projectrow {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  justify-content: flex-end;
+  margin: 0 2em 0 2em;
+}
+
+@media only screen and (max-width: 35em) {
+  .projectrow {
+    flex-direction: column;
+    margin: 0 1em;
+  }
+}
+
+.left {
+  width: 40%;
+}
+
+.right {
+  width: 60%;
+  display: flex;
+  flex-direction: row;
+}
+
+@media only screen and (max-width: 35em) {
+  .left {
+    width: 100%;
+  }
+
+  .right {
+    width: 100%;
+    flex-direction: column;
+  }
+}
+
+.imagestack {
+  width: 100%;
+}
+
+.projectimg {
+  border: 1px solid black;
+  width: 100%;
+  margin-bottom: 1em;
+}
+
+video:hover {
+  cursor: pointer;
+}
+
+img.projectimg:hover {
+  border: 1px solid blue;
+  cursor: zoom-in;
+}
+
+.embed {
+  height: 40em;
+}
+
+.projecttitle {
+  margin-bottom: 1em;
+}
+
+.projecttext {
+  margin-bottom: 0.5em;
+  margin-right: 2em;
+}
+
+.date {
+  min-width: 2em;
+  max-width: 2em;
+}
+
+@media only screen and (max-width: 35em) {
+  .date {
+    margin-bottom: 1.5em;
+  }
+}
+
+.projectrow a {
+  color: blue;
+  text-decoration: none;
+}
+
+.projectrow a::after {
+  margin-left: 0.2em;
+  content: "→";
+}
+
+
+
+/* lightbox */
+
+#lightbox {
+  position: fixed;
+  width: 100vw;
+  height: 100vh;
+  z-index: 1001;
+  backdrop-filter: blur(30px);
+  -webkit-backdrop-filter: blur(30px);
+}
+
+#lightbox img {
+  margin-top: 50vh;
+  margin-left: 50%;
+  transform: translate(-50%, -50%);
+  max-width: calc(100vw - 3em);
+  max-height: calc(100vh - 3em);
+  border: 1px solid black;
+}
+
+@media only screen and (max-width: 35em) {
+  #lightbox img {
+    max-width: calc(100vw - 1em);
+    max-height: auto;
+    margin-top: calc(50vh - 1.5em);
+    transform: translate(-50%, -50%);
+  }
+}

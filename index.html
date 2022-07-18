@@ -1,42 +1,59 @@
-<!DOCTYPE html>
+<html lang="en">
+<head>
 
-<html lang="en" dir="ltr">
+	<meta charset="utf-8">
+	<meta content="initial-scale=1.0,width=device-width" name="viewport">
+  <meta name="description" content="Saliko Adams - Los Angeles based artist, illustrator, printmaker, designer">
+	<link rel="icon" href="images/favicon.png">
+
+	<title>Saliko Adams</title>
+
+	<link href="css/reset.css" rel="stylesheet" type="text/css">
+	<link href="css/styles.css" rel="stylesheet" type="text/css">
+
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+	<script src="js/base.js"></script>
+
+</head>
+
 <body>
-  <head>
-    <title>Saliko Adams</title>
-    <link rel="stylesheet" href="style.css">
-  </head>
 
-  <body>
+	<div class="outsideframe">
+		<!-- when user clicks outside of info popups, they close -->
+	</div>
 
-    <div class="nav">
-      <a href="index.html">home</a>
-      <a href="screenprints.html">screenprints</a>
-      <a href="paintings.html">paintings</a>
-      <a href="design.html">design</a>
-      <a href="contact.html">contact</a>
-      <a href="about.html">about</a>
-    </div>
+	<nav class="menu">
+		<a class="navbutton selected" href="index.html">home</a>
+		<a class="navbutton" href="exhibitions.html">exhibitions</a>
+		<a class="navbutton" href="print.html">print</a>
+	</nav>
 
-    <div id="home" class="page">
+	<nav class="bottom">
+		<button class="about" href="">about</button>
+		<button class="contact" href="#">contact</button>
+	</nav>
+
+<div class="name">
+	<h1>Saliko</h1>
+	<h1>Adams</h1>
+</div>
+
+<div class="aboutwindow">
+	<img class="aboutimage" src="images/saliko_bio.jpg" alt="A photo of Saliko Adams working in the CalArts Print Lab">
+	<p class="abouttext">Saliko Adams is an artist and printmaker based in Los Angeles, California. She started her career in arts education working in public programs at Armory Center for the Arts in Pasadena, and at Art Center College of Design. Her personal practice focuses on incorporating traditional printmaking techniques with painting, sculpture, and video. After earning her BFA at CalArts, Saliko has worked on numerous print and design projects for prominent contemporary artists as well as arts organizations like Frieze and East of Borneo. Saliko also maintains a multi-media studio practice outside printmaking, with her most recent project “P.P.E.” exhibited at Coaxial Arts Foundation. Currently, her work focuses on the ever-changing culture of sex, love and relationships in the context of a global pandemic.</p>
+</div>
+
+<div class="contactwindow">
+	<p class="contacttext">for business inquiries:</p>
+	<a class="contacttext" href="mailto:salikoadams@gmail.com">salikoadams@gmail.com</a>
+	<p class="contacttext"><br>on instagram:</p>
+	<a class="contacttext" href="https://www.instagram.com/saliko.art/">saliko.art</a>
+</div>
+
+<div class="gradient">
+</div>
+
+<script class="orb" type="module" src="js/orb.js"></script>
 
 
-      <h1>Saliko Adams</h1>
-      <h4>early worm gets the worm</h4>
-
-      <p>los angeles based artist/illustrator/designer.</p>
-
-      <div class="soc">
-
-        <p>instagram</p>
-        <a href="https://www.instagram.com/saliko.art/?hl=en" target='_blank'>@saliko.art</a>
-      </div>
-
-    </div>
-
-
-    <script src="jquery-3.3.1.min.js" charset="utf-8"></script>
-    <script src="home.js" charset="utf-8"></script>
-
-  </body>
-</hmtl>
+</body>
