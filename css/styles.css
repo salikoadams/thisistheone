@@ -435,7 +435,7 @@ img.projectimg:hover {
 .fourohfour {
   top: 40%;
   left: 50%;
-  height: 96px;
+  height: 120px;
   width: 320px;
   transform: translateX(-50%);
   position: fixed;
@@ -450,7 +450,7 @@ img.projectimg:hover {
   padding: 1em;
 }
 
-.fourohfour p {
+.fourohfour p:last-of-type {
   margin-bottom: 1em;
 }
 
