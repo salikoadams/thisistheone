@@ -431,3 +431,35 @@ img.projectimg:hover {
     transform: translate(-50%, -50%);
   }
 }
+
+.fourohfour {
+  top: 40%;
+  left: 50%;
+  height: 96px;
+  width: 320px;
+  transform: translateX(-50%);
+  position: fixed;
+  z-index: 999;
+  background-color: rgba(223, 255, 0, 0.8);
+  border: 1px solid black;
+  border-radius: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  padding: 1em;
+}
+
+.fourohfour p {
+  margin-bottom: 1em;
+}
+
+.fourohfour a {
+  color: black;
+  text-decoration: none;
+}
+
+.fourohfour a:hover {
+  color: blue;
+  font-family: 'Louise', serif;
+}
